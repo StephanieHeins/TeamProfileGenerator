@@ -8,11 +8,40 @@ const Manager = require('./lib/Manager');
 const Intern = require('./lib/Intern');
 const generateHTML = require('./src/generateHTML');
 
+const teamMembers = []
+
 // Engineer Questions 
 
 
 // Intern Questions 
-
+const newIntern = () => {
+    inquirer.prompt([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'Name of intern:'
+        },
+        {
+            type: 'input',
+            name: 'id',
+            message: 'Employee ID:'
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'Email:'
+        },
+        {
+            type: 'input',
+            name: 'school',
+            message: "School:"
+        }
+    ]).then(({ name, id, email, school }) => {
+        // const intern = new Intern(name, id, email, school)
+        // teamMembers.push(intern)
+        menu()
+    })
+}
 
 // Menu List - Engineer, Intern, Done 
 const menuList = [
@@ -70,7 +99,7 @@ function init() {
         }
     ]).then(({ name, id, email, office }) => {
         // const manage = new Manager(name, id, email, office)
-        // employeeArr.push(manage)
+        // teamMembers.push(manage)
         menu()
     })
 }
