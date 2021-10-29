@@ -11,7 +11,34 @@ const generateHTML = require('./src/generateHTML');
 const teamMembers = []
 
 // Engineer Questions 
-
+const newEngineer = () => {
+    inquirer.prompt([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'Name of engineer:'
+        },
+        {
+            type: 'input',
+            name: 'id',
+            message: 'Employee ID:'
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'Email:'
+        },
+        {
+            type: 'input',
+            name: 'github',
+            message: "Github Username:"
+        }
+    ]).then(({ name, id, email, github }) => {
+        // const intern = new Intern(name, id, email, school)
+        // teamMembers.push(intern)
+        menu()
+    })
+}
 
 // Intern Questions 
 const newIntern = () => {
