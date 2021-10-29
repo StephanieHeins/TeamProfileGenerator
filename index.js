@@ -10,6 +10,17 @@ const generateHTML = require('./src/generateHTML');
 
 const teamMembers = []
 
+// Renders HTML file 
+const renderTeam = () => {
+    fs.writeFile("./dist/index.html", generateHTML(teamMembers), err => {
+        if (err) {
+            return console.log(err);
+        } else {
+            console.log("Success!")
+        }
+    })
+};
+
 // Engineer Questions 
 const newEngineer = () => {
     inquirer.prompt([
@@ -95,6 +106,7 @@ function menu() {
                 newIntern();
                 break;
             case "Done":
+                renderTeam();
                 break;
         };
     })
