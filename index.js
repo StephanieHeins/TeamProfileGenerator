@@ -34,8 +34,8 @@ const newEngineer = () => {
             message: "Github Username:"
         }
     ]).then(({ name, id, email, github }) => {
-        // const intern = new Intern(name, id, email, school)
-        // teamMembers.push(intern)
+        // const engineer = new Engineer(name, id, email, github)
+        // teamMembers.push(engineer)
         menu()
     })
 }
