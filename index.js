@@ -1,6 +1,7 @@
 // Node modules
 const fs = require('fs');
 const inquirer = require('inquirer');
+const util = require('util');
 
 // Other Files
 const Engineer = require('./lib/Engineer');
@@ -8,18 +9,9 @@ const Manager = require('./lib/Manager');
 const Intern = require('./lib/Intern');
 const generateHTML = require('./src/generateHTML');
 
-const teamMembers = []
+const writeFileAsync = util.promisify(fs.writeFile);
 
-// Renders HTML file 
-const renderTeam = () => {
-    fs.writeFile("./dist/index.html", generateHTML(teamMembers), err => {
-        if (err) {
-            return console.log(err);
-        } else {
-            console.log("Success!")
-        }
-    })
-};
+const teamMembers = []
 
 // Engineer Questions 
 const newEngineer = () => {
@@ -112,6 +104,33 @@ function menu() {
     })
 }
 
+// Render Team function 
+
+/*
+async function renderTeam() {
+    let result;
+  
+    try {
+        result = await writeFileAsync('./index.html', generateHTML(teamMembers))
+    } catch (error) {
+        handleError(error);
+    }
+  
+    // doSomething is a sync function
+    return console.log("Success!");
+  }
+  */
+
+
+/*
+const renderTeam = () => {
+
+    let html = generateHTML(teamMembers);
+    writeFileAsync('./index.html', html)
+      .then(() => console.log('Successfully created index.html!!'))
+      .catch((err) => console.error(err));
+  }
+  */
 
 // Initialize Program - Manager Questions 
 function init() {

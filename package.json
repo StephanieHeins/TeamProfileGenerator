@@ -22,6 +22,7 @@
   "homepage": "https://github.com/StephanieHeins/TeamProfileGenerator#readme",
   "dependencies": {
     "fs": "0.0.1-security",
-    "inquirer": "^8.2.0"
+    "inquirer": "^8.2.0",
+    "util": "^0.12.4"
   }
 }
