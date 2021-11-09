@@ -104,33 +104,15 @@ function menu() {
     })
 }
 
-// Render Team function 
-
-/*
-async function renderTeam() {
-    let result;
-  
-    try {
-        result = await writeFileAsync('./index.html', generateHTML(teamMembers))
-    } catch (error) {
-        handleError(error);
-    }
-  
-    // doSomething is a sync function
-    return console.log("Success!");
-  }
-  */
-
-
-/*
+// Render team function 
 const renderTeam = () => {
 
     let html = generateHTML(teamMembers);
-    writeFileAsync('./index.html', html)
+    writeFileAsync('index.html', html)
       .then(() => console.log('Successfully created index.html!!'))
       .catch((err) => console.error(err));
   }
-  */
+  
 
 // Initialize Program - Manager Questions 
 function init() {

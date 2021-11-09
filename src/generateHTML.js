@@ -92,3 +92,5 @@ const generateHTML = (teamMembers) => {
         </html>
         `
 };
+
+module.exports = generateHTML;

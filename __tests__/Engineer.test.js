@@ -1,6 +1,6 @@
 const Engineer = require("../lib/Engineer");
 
-describe('Employee class', () => { 
+describe('Engineer class', () => { 
 
     const empName = 'Test';
     const empId = '123'
@@ -20,7 +20,7 @@ describe('Employee class', () => {
         expect(new Engineer(empName, empId, empEmail, empGithub).getEmail()).toBe(empEmail)
     });
     it("Github user matches", () =>{
-        expect(new Engineer(empName, empId, empEmail, empGithub).getGitHub()).toBe(empGithub)
+        expect(new Engineer(empName, empId, empEmail, empGithub).getGithub()).toBe(empGithub)
     });
 
 })

@@ -20,6 +20,6 @@ describe('Manager class', () => {
         expect(new Manager(empName, empId, empEmail, empOffice).getEmail()).toBe(empEmail)
     });
     it("Github user matches", () =>{
-        expect(new Manager(empName, empId, empEmail, empOffice).getOffice()).toBe(empOffice)
+        expect(new Manager(empName, empId, empEmail, empOffice).getOfficeNumber()).toBe(empOffice)
     });
 })
